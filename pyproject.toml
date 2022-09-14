@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "dragonfly"
+name = "dragonfly2"
 authors = [{name = "Christo Butcher", email = "dist.dragonfly@twizzy.biz"}]
 readme = "README.rst"
 description="Speech recognition extension library"
@@ -52,10 +52,13 @@ dependencies=[
         "py-applescript == 1.0.0;platform_system=='Darwin'",
         "pyperclip >= 1.7.0;platform_system=='Darwin'",
         ]
+[tool.flit.module]
+name = "dragonfly"
 
 [project.urls]
 Home = "https://github.com/dictation-toolbox/dragonfly/"
-
+Documentation="https://dragonfly2.readthedocs.io/en/latest/"
+Source="https://github.com/dictation-toolbox/dragonfly/"
 
 [project.optional-dependencies]
 accessibility= [
