@@ -24,16 +24,6 @@ from setuptools import setup, find_packages, Command
 
 
 #---------------------------------------------------------------------------
-# Gather version from distribution file.
-
-directory = os.path.abspath(os.path.dirname(__file__))
-path = os.path.join(directory, "version.txt")
-version_string = open(path).readline()
-match = re.match(r"\s*(?P<rel>(?P<ver>\d+\.\d+)(?:\.\S+)*)\s*", version_string)
-version = match.group("ver")
-release = match.group("rel")
-
-#---------------------------------------------------------------------------
 # Override the 'test' command to use pytest instead.
 # Test requirements are located in the 'test_requirements.txt' file.
 

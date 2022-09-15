@@ -55,6 +55,7 @@ dependencies=[
         ]
 [tool.flit.module]
 name = "dragonfly"
+[project.scripts]
 
 [project.urls]
 Home = "https://github.com/dictation-toolbox/dragonfly/"
@@ -82,14 +83,6 @@ kaldi= [
 
 
 [tool.pytest.ini_options]
-minversion = "7.1.2"
-addopts = "--capture=tee-sys "
-# very important
-#the pythonpath lets pytest load code in your source area
-#in addition to that in site-packages etc.
-#you may want to run your tests without install natlinkcore with flit or pip
-
-pythonpath=["dragonfly"]
-testpaths= [
-    "dragonfly/test",
-]
+minversion = "6.0"
+addopts = ""
+python_file="main_test.py"
