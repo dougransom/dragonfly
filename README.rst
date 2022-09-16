@@ -185,7 +185,13 @@ dependencies, then you may need to upgrade pip with the following command:
 
     pip install --upgrade pip
 
-Run the tests from the project root:
+Run the tests from the project root, install the test extras:
+
+.. code:: shell
+
+    pip install .[test]
+
+The run the tests:
 
 .. code:: shell
 
