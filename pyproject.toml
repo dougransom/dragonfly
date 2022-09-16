@@ -69,9 +69,13 @@ accessibility= [
                 "regex;python_version>'2.7'",
                 ]
 sphinx= [
+        "swig",
         "sphinxwrapper >= 1.2.0",
         "pyjsgf >= 1.7.0",
-        "pyaudio"
+        "pyaudio",
+#        "packaging >= 19.0",
+#        "six",
+#        "lark-parser == 0.8.*",
         ]
 
 kaldi= [
