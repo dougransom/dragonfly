@@ -7,7 +7,7 @@ name = "dragonfly2"
 authors = [{name = "Christo Butcher", email = "dist.dragonfly@twizzy.biz"}]
 readme = "README.rst"
 description="Speech recognition extension library"
-version="0.35.0"
+version="0.35.1"
 
 
  classifiers=[
@@ -80,6 +80,7 @@ kaldi= [
         "sounddevice == 0.3.*",
         "webrtcvad-wheels == 2.0.*",
         ]
+test= ["pytest>=6.0"]
 
 
 [tool.pytest.ini_options]
