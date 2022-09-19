@@ -5,10 +5,13 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "dragonfly2"
 authors = [{name = "Christo Butcher", email = "dist.dragonfly@twizzy.biz"}]
+maintainers=[{name="Dane Finlay", email= "Danesprite@posteo.net"}]
+
 readme = "README.rst"
 description="Speech recognition extension library"
 version="0.35.1"
-
+requires-python = ">=2.7"
+license = {file="LICENSE.txt"}
 
  classifiers=[
                    "Development Status :: 4 - Beta",
@@ -57,6 +60,11 @@ dependencies=[
 name = "dragonfly"
 [project.scripts]
 
+[tool.flit.sdist]
+include = ["documentation"]
+exclude = ["documentation/*.html"]
+
+
 [project.urls]
 Home = "https://github.com/dictation-toolbox/dragonfly/"
 Documentation="https://dragonfly2.readthedocs.io/en/latest/"
@@ -68,6 +76,16 @@ accessibility= [
                 "regex<2022.1.18;python_version<='2.7'",
                 "regex;python_version>'2.7'",
                 ]
+
+#note pytest 6 requires python3.
+test= ["pytest>=6.0"]
+
+#if you really want to test python 2.7, use pip install python27_test
+python27_test = ["pytest == 3.9.*"]
+doc=["sphinx"]
+
+
+#this has to do with speech recognition package  https://pypi.org/project/pocketsphinx/, not the documentation tool. 
 sphinx= [
         "swig",
         "sphinxwrapper >= 1.2.0",
@@ -77,17 +95,17 @@ sphinx= [
 #        "six",
 #        "lark-parser == 0.8.*",
         ]
-
 kaldi= [
         # NOTE: Remember to also update engine.py to the same version!
         "kaldi-active-grammar ~= 3.1.0",
         "sounddevice == 0.3.*",
         "webrtcvad-wheels == 2.0.*",
         ]
-test= ["pytest>=6.0"]
-
+natlink=["natlinkcore"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = ""
 python_file="main_test.py"
+
+# commented for now [tool.sphinx-pyproject]
