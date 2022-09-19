@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "dragonfly2"
 authors = [{name = "Christo Butcher", email = "dist.dragonfly@twizzy.biz"}]
-maintainers=[{name="Dane Finlay", email= "Danesprite@posteo.net"}]
+maintainers=[{name="Dane Finlay", email= "dane@danefinlay.net"}]
 
 readme = "README.rst"
 description="Speech recognition extension library"
@@ -41,20 +41,17 @@ dependencies=[
 #        "lark-parser == 0.8.*",
 
         # Windows-only dependencies.
-        "comtypes;platform_system=='Windows'",
         "pywin32;platform_system=='Windows'",
 
         # Linux dependencies.
         # "python-libxdo;platform_system=='Linux'",
         # "Xlib;platform_system=='Linux'",
-        "psutil >= 5.5.1;platform_system=='Linux'",
-        "pynput >= 1.7.6;platform_system=='Linux'",
+        "psutil >= 5.5.1;platform_system=='posix'",
+        "pynput >= 1.7.6;platform_system=='posix'",
 
         # Mac OS dependencies.
-        "pynput >= 1.7.6;platform_system=='Darwin'",
         "pyobjc >= 5.2;platform_system=='Darwin'",
         "py-applescript == 1.0.0;platform_system=='Darwin'",
-        "pyperclip >= 1.7.0;platform_system=='Darwin'",
         ]
 [tool.flit.module]
 name = "dragonfly"
@@ -72,6 +69,7 @@ Source="https://github.com/dictation-toolbox/dragonfly/"
 
 [project.optional-dependencies]
 accessibility= [
+                "comtypes;platform_system='Windows'",
                 "enum34;python_version<'3.4'",
                 "regex<2022.1.18;python_version<='2.7'",
                 "regex;python_version>'2.7'",
